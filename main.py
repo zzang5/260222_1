@@ -358,16 +358,13 @@ with tab2:
         totals = grp_df.groupby("시도")["인구수"].transform("sum")
         grp_df["값"] = grp_df["인구수"] / totals * 100
         y_label = "비율 (%)"
-        barnorm = "total"
     else:
         grp_df["값"] = grp_df["인구수"]
         y_label = "인구수"
-        barnorm = None
 
     fig_stack = px.bar(
         grp_df, x="시도", y="값", color="연령대",
         barmode="stack",
-        barnorm="percent" if barnorm else None,
         labels={"값": y_label, "시도": ""},
         color_discrete_sequence=px.colors.sequential.Blues_r,
     )
