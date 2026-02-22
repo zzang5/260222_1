@@ -366,7 +366,8 @@ with tab2:
 
     fig_stack = px.bar(
         grp_df, x="시도", y="값", color="연령대",
-        barmode="stack" if barnorm else "stack",
+        barmode="stack",
+        barnorm="percent" if barnorm else None,
         labels={"값": y_label, "시도": ""},
         color_discrete_sequence=px.colors.sequential.Blues_r,
     )
@@ -375,7 +376,6 @@ with tab2:
         xaxis_tickangle=-40,
         legend=dict(orientation="h", y=-0.3),
         margin=dict(b=80, t=20),
-        barnorm=barnorm,
     )
     st.plotly_chart(fig_stack, use_container_width=True)
 
