@@ -1,7 +1,18 @@
+import subprocess, sys
+
+def _install(pkg):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", pkg, "-q"])
+
+try:
+    import plotly.express as px
+    import plotly.graph_objects as go
+except ImportError:
+    _install("plotly")
+    import plotly.express as px
+    import plotly.graph_objects as go
+
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
 import re
 import io
 
