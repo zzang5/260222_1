@@ -7,7 +7,7 @@ import io
 
 # ── 페이지 설정 ──────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="🇰🇷 인구 현황 대시보드",
+    page_title="대한민국 인구 현황 대시보드",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
