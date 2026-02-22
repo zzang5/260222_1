@@ -1,3 +1,4 @@
-   plotly
-   pandas
-   streamlit
+streamlit>=1.40.0
+plotly>=5.18.0
+pandas>=2.0.0
+altair>=5.0.0
